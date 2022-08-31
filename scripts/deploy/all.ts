@@ -17,6 +17,19 @@ async function main() {
   const managerFactory = await ethers.getContractFactory('Manager')
   const manager = await managerFactory.deploy(deployer.address)
   console.log('Manager address:', manager.address)
+
+  // payable
+  const payable1Factory = await ethers.getContractFactory('Payable1')
+  const payable1 = await payable1Factory.deploy()
+  console.log('Payable1 address:', payable1.address)
+
+  const payable2Factory = await ethers.getContractFactory('Payable2')
+  const payable2 = await payable2Factory.deploy()
+  console.log('Payable2 address:', payable2.address)
+
+  const payable3Factory = await ethers.getContractFactory('Payable3')
+  const payable3 = await payable3Factory.deploy()
+  console.log('Payable3 address:', payable3.address)
 }
 
 main()

@@ -17,8 +17,8 @@
     "test": "run-s test:unit test:coverage",
     "test:unit": "hardhat test",
     "test:coverage": "hardhat coverage",
-    "deploy-rinkeby": "hardhat run scripts/deploy.ts --network rinkeby",
-    "deploy-goerli": "hardhat run scripts/deploy.ts --network goerli",
+    "deploy-rinkeby": "hardhat run scripts/deploy/all.ts --network rinkeby",
+    "deploy-goerli": "hardhat run scripts/deploy/all.ts --network goerli",
     "verify-rinkeby": "hardhat verify --network rinkeby",
     "verify-goerli": "hardhat verify --network goerli"
   },
