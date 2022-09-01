@@ -23,5 +23,10 @@ contract Manager {
         return _message;
     }
 
+    function setMessageWithEth(string memory message) external payable onlyOwner {
+        _message = message;
+        emit SetMessage(msg.sender, message);
+    }
+
     event SetMessage(address sender, string message);
 }
