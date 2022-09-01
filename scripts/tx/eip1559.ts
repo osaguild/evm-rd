@@ -11,12 +11,13 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY as string
   console.log('wallet address:', wallet.address)
 
   const tx = {
-    to: config.PAYABLE2_CONTRACT,
+    to: config.SUB2_WALLET,
     value: ethers.utils.parseEther('0.01'),
+    //data: '0x',
     gasLimit: '21000', // 21000 is the default, 53000 is contract creation
     maxPriorityFeePerGas: ethers.utils.parseUnits('5', 'gwei'), // for EIP1559
     maxFeePerGas: ethers.utils.parseUnits('20', 'gwei'), // for EIP1559
-    nonce: 19,
+    nonce: 32,
     type: 2, // 2 means EIP1559 transaction
     chainId: 5, // goerli
   }

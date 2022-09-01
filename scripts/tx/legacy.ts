@@ -13,6 +13,7 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY as string
   const tx = {
     to: config.SUB2_WALLET,
     value: ethers.utils.parseEther('0.01').toHexString(),
+    //data: '0x',
     gasLimit: ethers.utils.hexlify(21000), // 21000 is the default
     gasPrice: ethers.utils.parseEther('0.000000001').toHexString(), // to avoid transaction underpriced
     nonce: 3,
