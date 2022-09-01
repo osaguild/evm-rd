@@ -65,9 +65,9 @@ const tx = {
 }
 ```
 
-## case.3: sam(bytes memory, bool, uint[] memory)
+## case.3: sam(bytes memory, bool, uint256[] memory)
 
-- function; sam(bytes memory, bool, uint[] memory)
+- function; sam(bytes memory, bool, uint256[] memory)
 - param1: "dave"
 - param2: true
 - param3: [1, 2, 3]
