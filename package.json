@@ -17,10 +17,13 @@
     "test": "run-s test:unit test:coverage",
     "test:unit": "hardhat test",
     "test:coverage": "hardhat coverage",
+    "run-mumbai": "hardhat run --network mumbai",
     "run-rinkeby": "hardhat run --network rinkeby",
     "run-goerli": "hardhat run --network goerli",
+    "deploy-mumbai": "hardhat run scripts/deploy/all.ts --network mumbai",
     "deploy-rinkeby": "hardhat run scripts/deploy/all.ts --network rinkeby",
     "deploy-goerli": "hardhat run scripts/deploy/all.ts --network goerli",
+    "verify-mumbai": "hardhat verify --network mumbai",
     "verify-rinkeby": "hardhat verify --network rinkeby",
     "verify-goerli": "hardhat verify --network goerli"
   },
