@@ -1,6 +1,6 @@
 import { ethers } from 'ethers'
 import fetch from 'node-fetch'
-import { config } from '../config'
+import { goerli as config } from '../config'
 import 'dotenv/config'
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY as string
