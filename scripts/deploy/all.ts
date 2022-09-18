@@ -35,6 +35,11 @@ async function main() {
   const fooFactory = await ethers.getContractFactory('Foo')
   const foo = await fooFactory.deploy()
   console.log('Foo address:', foo.address)
+
+  // Erc721
+  const erc721Factory = await ethers.getContractFactory('Erc721')
+  const erc721 = await erc721Factory.deploy()
+  console.log('Erc721 address:', erc721.address)
 }
 
 main()
