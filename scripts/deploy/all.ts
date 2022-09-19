@@ -1,4 +1,4 @@
-import { ethers } from 'hardhat'
+import { ethers, upgrades } from 'hardhat'
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers'
 
 async function main() {
@@ -40,6 +40,16 @@ async function main() {
   const erc721Factory = await ethers.getContractFactory('Erc721')
   const erc721 = await erc721Factory.deploy()
   console.log('Erc721 address:', erc721.address)
+
+  // Erc721Upgradeable
+  const erc721UpgradeableFactory = await ethers.getContractFactory('Erc721Upgradeable')
+  const erc721Upgradeable = await upgrades.deployProxy(erc721UpgradeableFactory, [
+    'SimpleNFT',
+    'TEST',
+    'https://osaguild.com/',
+  ])
+  await erc721Upgradeable.deployed()
+  console.log('Erc721Upgradeable address:', erc721Upgradeable.address)
 }
 
 main()

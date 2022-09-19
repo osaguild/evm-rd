@@ -11,6 +11,7 @@ const goerli = {
 const mumbai = {
   SUB1_WALLET: '0xf4aAA4b38a0E749415E37638879BeDfe47645a77',
   ERC721_CONTRACT: '0x99Aad9C14f4cCda5e49e84d1dABD0400e4dA2476',
+  ERC721UPGRADEABLE_CONTRACT: '0x936a5159dDc71DDA8d6f59aebA8dC08aa6b3ECAc',
 }
 
 export { goerli, mumbai }
