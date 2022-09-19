@@ -43,3 +43,43 @@ https://mumbai.polygonscan.com/tx/0xcb66442f3107e9d25b78d8babaca4b8c6e28e4defe66
 
 https://testnets.opensea.io/assets/mumbai/0x99aad9c14f4ccda5e49e84d1dabd0400e4da2476/1
 
+## 2. ERC721EnumerableUpgradeable
+
+### code
+
+```solidity
+contract Erc721Upgradeable is Initializable, ERC721EnumerableUpgradeable {
+  using Counters for Counters.Counter;
+  Counters.Counter private _tokenIds;
+  string private _baseTokenURI;
+
+  function initialize(
+    string memory name,
+    string memory symbol,
+    string memory baseTokenURI
+  ) public initializer {
+    __ERC721_init(name, symbol);
+    _baseTokenURI = baseTokenURI;
+  }
+
+  function mint(address to) public returns (uint256) {
+    uint256 newItemId = _tokenIds.current();
+    _mint(to, newItemId);
+    _tokenIds.increment();
+    return newItemId;
+  }
+
+  function _baseURI() internal view virtual override returns (string memory) {
+    return _baseTokenURI;
+  }
+}
+
+```
+
+### polygon scan
+
+https://mumbai.polygonscan.com/tx/0xeafedb60d9c98499255ceac6aa18e11fd6abd1c38197c35b5d6b0fe33a906552
+
+### opensea
+
+https://testnets.opensea.io/assets/mumbai/0x936a5159ddc71dda8d6f59aeba8dc08aa6b3ecac/0
