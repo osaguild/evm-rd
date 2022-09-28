@@ -1,5 +1,6 @@
 import { ethers, upgrades } from 'hardhat'
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers'
+import { deploy } from '@openzeppelin/hardhat-upgrades/dist/utils'
 
 async function main() {
   // account check
@@ -50,6 +51,11 @@ async function main() {
   ])
   await erc721Upgradeable.deployed()
   console.log('Erc721Upgradeable address:', erc721Upgradeable.address)
+
+  // Erc721MetaTransaction
+  const erc721MetaTransactionFactory = await ethers.getContractFactory('Erc721MetaTransaction')
+  const erc721MetaTransaction = await erc721MetaTransactionFactory.deploy('MetaNFT', 'TEST')
+  console.log('Erc721MetaTransaction address:', erc721MetaTransaction.address)
 }
 
 main()
