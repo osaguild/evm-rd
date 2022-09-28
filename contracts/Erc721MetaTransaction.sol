@@ -185,7 +185,7 @@ contract Erc721MetaTransaction is ERC721Enumerable, ContextMixin, NativeMetaTran
      * As another option for supporting trading without requiring meta transactions, override isApprovedForAll to whitelist OpenSea proxy accounts on Matic
      */
     function isApprovedForAll(address _owner, address _operator) public view override returns (bool isOperator) {
-        if (_operator == address(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266)) {
+        if (_operator == address(0xf4aAA4b38a0E749415E37638879BeDfe47645a77)) {
             return true;
         }
 
