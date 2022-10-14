@@ -1,0 +1,20 @@
+{
+  "inputs": [
+    {
+      "name": "x",
+      "public": false,
+      "type": "field"
+    },
+    {
+      "name": "y",
+      "public": true,
+      "type": "field"
+    }
+  ],
+  "output": {
+    "type": "tuple",
+    "components": {
+      "elements": []
+    }
+  }
+}
