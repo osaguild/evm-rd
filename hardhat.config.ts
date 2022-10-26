@@ -30,6 +30,10 @@ module.exports = {
       url: `https://polygon-mumbai.g.alchemy.com/v2/${ALCHEMY_MUMBAI_API_KEY}`,
       accounts: [`${PRIVATE_KEY}`],
     },
+    polygon: {
+      url: `wss://polygon-mainnet.g.alchemy.com/v2/${ALCHEMY_MUMBAI_API_KEY}`,
+      accounts: [`${PRIVATE_KEY}`],
+    },
   },
   etherscan: {
     apiKey: ETHERSCAN_API_KEY,

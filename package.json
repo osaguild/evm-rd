@@ -23,6 +23,7 @@
     "deploy-mumbai": "hardhat run scripts/deploy/all.ts --network mumbai",
     "deploy-rinkeby": "hardhat run scripts/deploy/all.ts --network rinkeby",
     "deploy-goerli": "hardhat run scripts/deploy/all.ts --network goerli",
+    "verify-polygon": "hardhat verify --network polygon",
     "verify-mumbai": "hardhat verify --network mumbai",
     "verify-rinkeby": "hardhat verify --network rinkeby",
     "verify-goerli": "hardhat verify --network goerli"
