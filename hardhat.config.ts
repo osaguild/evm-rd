@@ -13,6 +13,7 @@ const ALCHEMY_RINKEBY_API_KEY = process.env.ALCHEMY_RINKEBY_API_KEY
 const ALCHEMY_GOERLI_API_KEY = process.env.ALCHEMY_GOERLI_API_KEY
 const ALCHEMY_MUMBAI_API_KEY = process.env.ALCHEMY_MUMBAI_API_KEY
 const PRIVATE_KEY = process.env.PRIVATE_KEY
+const LOCAL_PRIVATE_KEY = process.env.LOCAL_PRIVATE_KEY
 const ETHERSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY
 
 module.exports = {
@@ -33,6 +34,11 @@ module.exports = {
     polygon: {
       url: `wss://polygon-mainnet.g.alchemy.com/v2/${ALCHEMY_MUMBAI_API_KEY}`,
       accounts: [`${PRIVATE_KEY}`],
+    },
+    local: {
+      url: 'http://localhost:8545',
+      accounts: [`${LOCAL_PRIVATE_KEY}`],
+      allowUnlimitedContractSize: true,
     },
   },
   etherscan: {

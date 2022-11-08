@@ -63,3 +63,8 @@ yarn verify-goerli --contract YOUR_CONTRACT_CODE_PATH:YOUR_CONTRACT_NAME YOUR_CO
 /* sample */
 yarn verify-goerli --contract contracts/Token.sol:Token 0x3A345Cef4a5d672BADa38f9f03fc09Eb67e70e39
 ```
+
+# how to use docker
+- run docker: `docker-compose up -d`
+- copy private key from console
+- set private key to `.env`

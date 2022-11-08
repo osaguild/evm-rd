@@ -1,0 +1,12 @@
+version: '1'
+services:
+  evm_rc_localchain:
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    container_name: evm_rd
+    ports:
+      - 8545:8545
+    volumes:
+      - ./:/usr/src/app
+    command: yarn hardhat node
