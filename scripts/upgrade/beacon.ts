@@ -11,7 +11,11 @@ async function main() {
 
   // Box with proxy
   const Box = await ethers.getContractFactory('Box')
-  const box = await upgrades.deployProxy(Box)
+  const beacon = await upgrades.deployBeacon(Box)
+  await beacon.deployed()
+  console.log('deployed Beacon:', beacon.address)
+
+  const box = await upgrades.deployBeaconProxy(beacon.address, Box)
   await box.deployed()
   console.log('deployed Box:', box.address)
 
@@ -33,7 +37,7 @@ async function main() {
 
   // upgrade v2
   const BoxV2 = await ethers.getContractFactory('BoxV2')
-  await upgrades.upgradeProxy(box.address, BoxV2)
+  await upgrades.upgradeBeacon(beacon.address, BoxV2)
   console.log('Box upgraded to V2')
 
   // get x, y, z
@@ -63,17 +67,17 @@ async function main() {
 
   // upgrade v3 is failed
   //const BoxV3 = await ethers.getContractFactory('BoxV3')
-  //await upgrades.upgradeProxy(box.address, BoxV3)
+  //await upgrades.upgradeBeacon(beacon.address, BoxV3)
   //console.log('Box upgraded to V3')
 
   // upgrade v4 is succeeded
   //const BoxV4 = await ethers.getContractFactory('BoxV4')
-  //await upgrades.upgradeProxy(box.address, BoxV4)
+  //await upgrades.upgradeBeacon(beacon.address, BoxV4)
   //console.log('Box upgraded to V4')
 
   // upgrade v5 is failed
   const BoxV5 = await ethers.getContractFactory('BoxV5')
-  await upgrades.upgradeProxy(box.address, BoxV5)
+  await upgrades.upgradeBeacon(beacon.address, BoxV5)
   console.log('Box upgraded to V5')
 
   // get x, y, z

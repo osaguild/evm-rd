@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity =0.8.9;
 
-contract BoxV3 {
+contract BoxV5 {
     uint256 private _x;
+    uint256 private _z;
     uint256 private _y;
 
     function setX(uint256 x) external {
@@ -13,11 +14,19 @@ contract BoxV3 {
         _y = y;
     }
 
+    function setZ(uint256 z) external {
+        _z = z;
+    }
+
     function getX() external view returns (uint256) {
         return _x + 1;
     }
 
     function getY() external view returns (uint256) {
         return _y + 1;
+    }
+
+    function getZ() external view returns (uint256) {
+        return _z + 1;
     }
 }

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity =0.8.9;
 
-contract BoxV2 {
+contract BoxV4 {
     uint256 private _x;
     uint256 private _y;
     uint256 private _z;
