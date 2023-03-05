@@ -27,10 +27,16 @@ async function main() {
   // console.log('pausable address:', pausable.address)
 
   // Pauseable
-  const Access = await ethers.getContractFactory('AdminAccessControl')
-  const access = await Access.deploy()
-  await access.deployed()
-  console.log('access address:', access.address)
+  // const Access = await ethers.getContractFactory('AdminAccessControl')
+  // const access = await Access.deploy()
+  // await access.deployed()
+  // console.log('access address:', access.address)
+
+  // JwtTest
+  const Jwt = await ethers.getContractFactory('JwtTest')
+  const jwt = await Jwt.deploy()
+  await jwt.deployed()
+  console.log('jwt address:', jwt.address)
 }
 
 main()
